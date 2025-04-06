@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You're Invited!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: url('https://source.unsplash.com/1600x900/?party,celebration') no-repeat center center fixed;
+            background-size: cover;
+            padding: 50px;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        h1 {
+            color: #333;
+        }
+        .details {
+            margin: 20px 0;
+            font-size: 18px;
+        }
+        .rsvp-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #ff5733;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.2s ease, background-color 0.3s ease;
+        }
+        .rsvp-button:hover {
+            background-color: #e04e2a;
+            transform: scale(1.1);
+        }
+        .guest-list {
+            margin-top: 20px;
+            font-size: 16px;
+        }
+        .guest-list ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .guest-list li {
+            padding: 5px;
+            background: #ff5733;
+            color: white;
+            border-radius: 5px;
+            margin: 5px;
+            display: inline-block;
+        }
+    </style>
+    <script>
+        function rsvp() {
+            let name = prompt("Enter your name to RSVP:");
+            if (name) {
+                let guestList = document.getElementById("guest-list");
+                let listItem = document.createElement("li");
+                listItem.textContent = name;
+                guestList.appendChild(listItem);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 You're Invited to an Exclusive Party! 🎉</h1>
+        <p class="details">Join us for a night of fun, music, and celebration!</p>
+        <p class="details"><strong>Date:</strong> Saturday, June 15, 2025</p>
+        <p class="details"><strong>Time:</strong> 7:00 PM - Midnight</p>
+        <p class="details"><strong>Location:</strong> The Grand Hall, 123 Celebration Ave, Cityville</p>
+        <button class="rsvp-button" onclick="rsvp()">RSVP Now</button>
+        <div class="guest-list">
+            <h3>Guest List</h3>
+            <ul id="guest-list"></ul>
+        </div>
+    </div>
+</body>
+</html>
